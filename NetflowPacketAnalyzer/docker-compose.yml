@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  sender:
+    build: ./sender
+    container_name: netflow-sender
+    networks:
+      - netflow-net
+    depends_on:
+      - receiver
+    environment:
+      - RECEIVER_HOST=receiver
+      - RECEIVER_PORT=2055
+  receiver:
+    build: ./receiver
+    container_name: netflow-receiver
+    networks:
+      - netflow-net
+    ports:
+      - "2055:2055/udp" # Optional: Expose to host for external testing
+    environment:
+      - LISTEN_HOST=0.0.0.0
+      - LISTEN_PORT=2055
+      # - RUST_AVAILABLE=True # Optional: By default rust module should be available
+networks:
+  netflow-net:
+    driver: bridge
