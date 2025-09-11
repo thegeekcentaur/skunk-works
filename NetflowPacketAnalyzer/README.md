@@ -20,5 +20,8 @@ Eventually the solution becomes a python function calling a pre-compiled code wh
 ## How To Run
 
 - Check out the repository
-- Change directory to `NetflowPacketAnalyzer` in the terminal
+- Change directory to `NetflowPacketAnalyzer` in the terminal, i.e., ``` cd NetflowPacketAnalyzer```
 - Run ```bash docker compose up --build```
+- To compare performance between the original Python code, and the pre-compiled Rust module, set the environment variable __RUST_AVAILBLE__ to __True__ under `NetflowPacketAnalyzer\docker-compose.yml`
+     * Note the timing details in the terminal, once the containers start running.
+     * Example - ```bash  Function: 'handle_packet', time(seconds): 0.00018552```
