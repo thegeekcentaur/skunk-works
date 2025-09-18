@@ -85,7 +85,7 @@ class NetflowSender:
                     print(f"  Size: {len(packet)} bytes")
                     
                     # Sleep for 1-5 seconds at random before sending next packet
-                    await asyncio.sleep({random.randint(1, 5)})
+                    await asyncio.sleep(random.randint(1, 5))
                     
                 except socket.gaierror as e:
                     print(f"DNS resolution error: {e}")

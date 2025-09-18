@@ -11,6 +11,16 @@ services:
     environment:
       - RECEIVER_HOST=receiver
       - RECEIVER_PORT=2055
+  sender-rust:
+    build: ./sender-rust
+    container_name: netflow-rustic-sender
+    networks:
+      - netflow-net
+    depends_on:
+      - receiver
+    environment:
+      - RECEIVER_HOST=receiver
+      - RECEIVER_PORT=2055
   receiver:
     build: ./receiver
     container_name: netflow-receiver
