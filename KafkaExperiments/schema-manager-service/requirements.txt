@@ -1,0 +1,8 @@
+fastapi==0.115.0
+uvicorn==0.31.0
+requests==2.32.3
+# dataclasses-avroschema==0.50.0 # For Python Avro classes
+py-avro-schema==3.1.0
+confluent-kafka==2.5.0  # For Kafka wrappers in generated lib
+setuptools==75.1.0  # For packaging
+python-multipart==0.0.2

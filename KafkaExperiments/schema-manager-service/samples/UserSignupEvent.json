@@ -1,0 +1,11 @@
+{
+    "namespace": "com.example.events",
+    "type": "record",
+    "name": "UserSignupEvent",
+    "fields": [
+        {"name": "userId", "type": "string"},
+        {"name": "email", "type": "string"},
+        {"name": "signupTimestamp", "type": "long"},
+        {"name": "source", "type": "string"}
+    ]
+}

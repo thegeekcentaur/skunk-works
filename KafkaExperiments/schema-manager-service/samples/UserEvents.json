@@ -1,0 +1,25 @@
+{
+    "namespace": "com.example.events",
+    "type": "record",
+    "name": "UserEvent",
+    "fields": [
+        {
+            "name": "userId",
+            "type": "string"
+        },
+        {
+            "name": "eventType",
+            "type": "string"
+        },
+        {
+            "name": "lastLoggedOn",
+            "type":"long",
+            "logicalType": "timestamp-millis"
+        },
+        {
+            "name": "tenantId",
+            "type": "string",
+            "default": "legacy"
+        }
+    ]
+}
